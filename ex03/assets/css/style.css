@@ -1,0 +1,143 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1140px;
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #313642;
+}
+
+.letter-body {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 112.5px;
+  background-color: #cf4a43;
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+}
+
+.letter-body::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: -99.1px;
+  left: 0;
+  width: 200px;
+  height: 100px;
+  background: #cf4a43;
+  clip-path: polygon(50% 50%, 50% 50%, 100% 100%, 0% 100%);
+  transform-origin: center bottom;
+  transform: rotate(180deg);
+}
+
+.letter-write {
+  visibility: hidden;
+  position: absolute;
+  bottom: 0;
+  width: 150px;
+  height: 50px;
+  background-color: #fff;
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+}
+
+.letter-skews {
+  display: flex;
+  justify-content: space-between;
+}
+
+.letter-decor {
+  width: 10px;
+  height: 15px;
+  background-color: #cf4a43;
+  transform: skewX(-40deg);
+}
+
+.rectangle-tall,
+.rectangle-short {
+  margin-top: 10px;
+  margin-left: 5px;
+  width: 70px;
+  height: 10px;
+  background: #cf4a43;
+}
+
+.rectangle-short {
+  width: 50px;
+  height: 10px;
+}
+
+.circle {
+  margin-top: 30px;
+  margin-left: 100px;
+  width: 40px;
+  height: 40px;
+  background: #eecccc;
+  border-radius: 50%;
+}
+
+.letter-wing__left,
+.letter-wing__right {
+  position: absolute;
+  width: 200px;
+  height: 112.5px;
+  background: #e35d55;
+  clip-path: polygon(0% 0%, 100% 100%, 100% 100%, 0% 100%);
+  box-shadow: 0 0 2px #ccc;
+}
+
+.letter-wing__right {
+  clip-path: polygon(0% 100%, 100% 0, 100% 100%, 0% 100%);
+  background: #e2514b;
+}
+
+.letter-shadow {
+  position: absolute;
+  bottom: 100px;
+  content: "";
+  display: block;
+  width: 220px;
+  height: 15px;
+  background: rgb(40, 40, 40);
+  filter: blur(2px);
+  border-radius: 500px / 40px;
+}
+
+.letter-body:hover::before {
+  transform: rotate(0deg);
+}
+
+.letter-body:hover + .letter-shadow {
+  width: 180px;
+  height: 15px;
+}
+
+.letter-body:hover {
+  transform: translateY(70px);
+}
+
+.letter-body:hover .letter-write {
+  visibility: visible;
+  height: 180px;
+  transform: translateY(-10px);
+}
