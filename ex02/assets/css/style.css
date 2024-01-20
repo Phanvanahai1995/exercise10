@@ -68,7 +68,8 @@ input:checked ~ .navbar-title {
   }
 }
 
-input:checked + .navbar-lbl {
+input:checked + .navbar-lbl,
+.navbar-lbl:hover {
   color: #fff;
   background-color: #3298dc;
 }
