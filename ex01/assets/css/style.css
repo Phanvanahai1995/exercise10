@@ -1,0 +1,105 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  position: relative;
+  margin-top: 50px;
+  width: 800px;
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 5px #ddd;
+  background-color: #05a8f5;
+}
+
+.list {
+  position: absolute;
+  display: block;
+  inset: 0 90% 84% 0;
+  padding: 10px;
+  border-radius: 0 0 100% 0;
+  color: #05a8f5;
+  background-color: #fff;
+  transition: all 0.2s ease-in;
+}
+
+.navbar {
+  position: absolute;
+  inset: 0 80% 0 0;
+  color: #05a8f5;
+  visibility: hidden;
+  opacity: 0;
+  transform-origin: top left;
+  scale: 0;
+}
+
+.navbar-arrow {
+  display: block;
+  font-size: 2rem;
+  padding: 10px;
+}
+
+.navbar-link {
+  display: block;
+  width: 100%;
+  padding: 10px 25px;
+}
+
+.navbar-link:hover {
+  color: #000;
+  background-color: #eeeeee;
+}
+
+input:checked ~ .navbar {
+  visibility: visible;
+  opacity: 1;
+  scale: 1;
+}
+
+input:checked + .list {
+  inset: 0;
+  border-radius: 0;
+}
+
+input:checked + .list i {
+  visibility: hidden;
+}
+
+.content {
+  width: 50%;
+  margin-left: auto;
+  color: #fff;
+}
+
+.heading {
+  margin: 50% 0 0 100px;
+  font-size: 3.2rem;
+  font-weight: 600;
+}
+
+.desc {
+  font-size: 2rem;
+  margin: 20px 0 0 80px;
+}
+
+span {
+  font-size: 1.2rem;
+}
