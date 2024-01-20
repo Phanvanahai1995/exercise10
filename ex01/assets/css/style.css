@@ -74,9 +74,37 @@ input:checked ~ .navbar {
   scale: 1;
 }
 
+@keyframes animate {
+  0% {
+    inset: 0 90% 84% 0;
+    border-radius: 0 0 100% 0;
+  }
+
+  25% {
+    inset: 0 70% 65% 0;
+    border-radius: 0 0 100% 0;
+  }
+
+  50% {
+    inset: 0 50% 46% 0;
+    border-radius: 0 0 100% 0;
+  }
+
+  75% {
+    inset: 0 25% 23% 0;
+    border-radius: 0 0 100% 0;
+  }
+
+  100% {
+    inset: 0;
+    border-radius: 0;
+  }
+}
+
 input:checked + .list {
-  inset: 0;
-  border-radius: 0;
+  animation-name: animate;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
 }
 
 input:checked + .list i {
