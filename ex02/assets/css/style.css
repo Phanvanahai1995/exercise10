@@ -48,21 +48,21 @@ body {
 input:checked ~ .navbar-title {
   display: block;
   outline: 1px solid #ccc;
-  animation-name: animate;
-  animation-duration: 1s;
+  animation: animate 1s linear;
   transform-origin: center top;
 }
 
 @keyframes animate {
   from {
-    clip-path: polygon(0% 0%, 100% 0%, 98% 100%, 2% 100%);
-    transform: scaleY(0.5);
-    background-color: rgb(235, 231, 224);
-    opacity: 0.6;
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: rotateX(70deg);
+    opacity: 0.5;
   }
   to {
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-    transform: scaleY(1);
+    transform: rotateX(0deg);
     background-color: #fff;
     opacity: 1;
   }
@@ -79,7 +79,7 @@ input:checked + .navbar-lbl,
   position: absolute;
   top: 41px;
   left: 45.25px;
-  width: 709.5px;
+  width: 709px;
   padding: 20px;
   overflow-x: scroll;
   background-color: #fff;
